@@ -8,9 +8,12 @@ namespace tetriss
 {
     internal class Figura_I : Figura
     {
-        int[,,] tetromino = new int[4, 4, 4];
-        ctorssss
-           
+        int[,,] tetromino;
+
+       /* public Figura_I()
+        {
+            tetromino = new 
+        }*/
         override public int[,,] Tetromino
         {
             get { return tetromino; }
