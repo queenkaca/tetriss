@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Figura.cs" />
+    <Compile Include="Figura_I.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
