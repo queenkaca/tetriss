@@ -9,7 +9,7 @@ namespace tetriss
     abstract class Figura
     {
         #region atributi
-        int x, y;
+        protected int x, y;
         #endregion
 
         #region konstruktori
