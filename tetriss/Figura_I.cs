@@ -48,7 +48,7 @@ namespace tetriss
         public void Crtaj(Graphics g, Random random)
         {
             Color boja = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
-
+            
         }
 
     }
