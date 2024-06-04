@@ -102,5 +102,8 @@
   <ItemGroup>
     <None Include="Resources\desktop-wallpaper-trix-on-twitter-pixel-art-pixel-art-design-pixel-art-tutorial-anime-pixel.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\lofitet.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

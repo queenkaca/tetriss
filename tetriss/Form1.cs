@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,10 +17,14 @@ namespace tetriss
         {
             InitializeComponent();
         }
-
+        private SoundPlayer soundPlayer;
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Initialize the SoundPlayer with the path to the audio file
+            soundPlayer = new SoundPlayer(@"C:\Users\Radovanovic\Downloads\lofitet.wav");
 
+            // Play the sound in a loop
+            soundPlayer.PlayLooping();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
