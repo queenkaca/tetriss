@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -148,12 +149,47 @@ namespace tetriss
         }
         public bool DodajFiguru(Random r)
         {
-            // % 7 osigurava da trenutna figura ne izadje iz polja za igru
-            trenutnaFigura.X = r.Next() % 7;
-            trenutnaFigura.Y = 0;
-            //trenutnaRotacija = 0;
             trenutnaFigura = sledecaFigura;
-            return false;
+            sledecaFigura = GenerisiRandomFiguru(r);
+
+            trenutnaFigura.X = r.Next(7);
+            trenutnaFigura.Y = 0;
+            trenutnaFigura.TrenutnaRotacija = 0;
+
+            // ide kroz celije trenutne figure
+            for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
+            {
+                for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
+                {
+                    // proverava da li je celija trenutne figure zauzeta i da li se ma to mestu vec nalazi neka druga figura na tabli
+                    if (trenutnaFigura.Tetromino[trenutnaFigura.TrenutnaRotacija, i - trenutnaFigura.X, j - trenutnaFigura.Y] < 0 && mreza[i, j] != 0)
+                        return false;
+
+                    if (trenutnaFigura.Tetromino[trenutnaFigura.TrenutnaRotacija, i - trenutnaFigura.X, j - trenutnaFigura.Y] < 0)
+                        //***************** treba umesto -1 da ide neka boja---- -currentShapeColor
+                        mreza[i, j] = -1;
+                }
+            }
+
+            return true;
+        }
+        private Figura GenerisiRandomFiguru(Random r)
+        {
+            int vrstaOblika = r.Next(7);
+            int vrstaRotacije = r.Next(4);
+
+            switch (vrstaOblika)
+            {
+                case 0: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
+                case 1: return new Figura_L { TrenutnaRotacija = vrstaRotacije };
+                case 2: return new Figura_J { TrenutnaRotacija = vrstaRotacije };
+                case 3: return new Figura_Z { TrenutnaRotacija = vrstaRotacije };
+                case 4: return new Figura_T { TrenutnaRotacija = vrstaRotacije };
+                case 5: return new Figura_S { TrenutnaRotacija = vrstaRotacije };
+                case 6: return new Figura_O { TrenutnaRotacija = vrstaRotacije };
+                case 7: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
+                default: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
+            }
         }
         #endregion
     }
