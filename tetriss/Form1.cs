@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +22,6 @@ namespace tetriss
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -47,7 +49,7 @@ namespace tetriss
             }
             Graphics g = CreateGraphics();
             Random random = new Random();
-            Figura_T f = new Figura_T(5, 5, 1);
+            Figura_Z f = new Figura_Z(5, 5, 1);
             f.Crtaj(g, random);
         }
 
