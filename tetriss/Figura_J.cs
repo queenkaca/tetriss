@@ -39,10 +39,17 @@ namespace tetriss
         {
             get { return tetromino; }
         }
+        
         public void Crtaj(Graphics g, Random random)
         {
             Color boja = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
 
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                }
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,15 @@ namespace tetriss
         public void PomeriLevo()
         { }
 
+        public void CrtajNaXY(int x, int y, Graphics g, Brush brush)
+        {
+            //crtanje kvadrata na poziciji (x,y) na tabli 10x20
+            int pocetakTableX = 225;
+            int pocetakTableY = 50;
+            g.FillRectangle(brush, pocetakTableX + dimenzijeKvadrata * x,
+                pocetakTableY + dimenzijeKvadrata * y, dimenzijeKvadrata, dimenzijeKvadrata);
+
+        }
         #endregion
 
         #region svojstva
