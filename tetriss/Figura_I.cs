@@ -13,6 +13,7 @@ namespace tetriss
 
         public Figura_I(int x, int y, int trenutnaRotacija):base(x, y, trenutnaRotacija)
         {
+            // prvi broj je broj matrica, drugi je broj redova u matrici i treci je broj kolona u matrici
             tetromino = new int[4, 4, 4] {
                 { { 0, 0, -1, 0 },
                   { 0, 0, -1, 0 },
