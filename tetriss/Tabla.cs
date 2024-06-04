@@ -134,7 +134,7 @@ namespace tetriss
         }
         private void AzurirajMrezu()
         {
-            // jos jednom prolazi kroz oblik i postavlja negativne vrednosti na pozitivne
+            // prolazi kroz oblik i postavlja negativne vrednosti na pozitivne
             for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
             {
                 for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)

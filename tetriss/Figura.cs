@@ -10,13 +10,16 @@ namespace tetriss
     {
         #region atributi
         protected int x, y;
+        protected int trenutnaRotacija;
+        int dimenzijeKvadrata = 30;
         #endregion
 
         #region konstruktori
-        public Figura(int x, int y)
+        public Figura(int x, int y, int trenutnaRotacija)
         {
             X = x;
             Y = y;
+            TrenutnaRotacija = trenutnaRotacija;
         }
         public Figura() { }
         #endregion
@@ -36,7 +39,17 @@ namespace tetriss
         {
             get;
         }
-
+        public int TrenutnaRotacija
+        {
+            get { return trenutnaRotacija; }
+            set
+            {
+                if (value < 0 || value > 3)
+                    throw new Exception("Indeks rotacije mora biti u intervalu [0, 3]!");
+                else
+                    trenutnaRotacija = value;
+            }
+        }
         public int X
         {
             get { return x; }
