@@ -28,19 +28,28 @@ namespace tetriss
         #region metode
         public void PomeriDesno()
         {
-
+            X++;
         }
         public void PomeriLevo()
-        { }
+        {
+            X--;
+        }
+        public void PomeriDole()
+        {
+            Y++;
+        }
 
-        public void CrtajNaXY(int x, int y, Graphics g, Brush brush)
+        protected void CrtajNaXY(int i, int j, Graphics g, Brush brush)
         {
             //crtanje kvadrata na poziciji (x,y) na tabli 10x20
+            Pen olovka = new Pen(Color.Black);
             int pocetakTableX = 225;
             int pocetakTableY = 50;
-            g.FillRectangle(brush, pocetakTableX + dimenzijeKvadrata * x,
-                pocetakTableY + dimenzijeKvadrata * y, dimenzijeKvadrata, dimenzijeKvadrata);
 
+            g.FillRectangle(brush, pocetakTableX + dimenzijeKvadrata * i,
+                pocetakTableY + dimenzijeKvadrata * j, dimenzijeKvadrata, dimenzijeKvadrata);
+            g.DrawRectangle(olovka, pocetakTableX + dimenzijeKvadrata * i,
+                pocetakTableY + dimenzijeKvadrata * j, dimenzijeKvadrata, dimenzijeKvadrata);
         }
         #endregion
 

@@ -45,6 +45,10 @@ namespace tetriss
             {
                 e.Graphics.DrawLine(olovka, 225, 50 + i * 30, 525, 50 + i*30);
             }
+            Graphics g = CreateGraphics();
+            Random random = new Random();
+            Figura_T f = new Figura_T(5, 5, 1);
+            f.Crtaj(g, random);
         }
 
         private void label1_Click(object sender, EventArgs e)
