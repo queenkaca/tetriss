@@ -12,6 +12,7 @@ namespace tetriss
         int[,,] tetromino;
         public Figura_T(int x, int y, int trenutnaRotacija):base(x, y, trenutnaRotacija)
         {
+            VrstaOblika = 4;
             tetromino = new int[4, 4, 4]{
                 { { 0,  0, 0, 0 },
                   {-1, -1,-1, 0 },

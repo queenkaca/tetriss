@@ -12,6 +12,7 @@ namespace tetriss
         #region atributi
         protected int x, y;
         protected int trenutnaRotacija;
+        protected int vrstaOblika;
         int dimenzijeKvadrata = 30;
         #endregion
 
@@ -56,6 +57,17 @@ namespace tetriss
                     throw new Exception("Indeks rotacije mora biti u intervalu [0, 3]!");
                 else
                     trenutnaRotacija = value;
+            }
+        }
+        public int VrstaOblika
+        {
+            get { return vrstaOblika; }
+            set
+            {
+                if (value < 0 || value > 6)
+                    throw new Exception("Indeks oblika mora biti u intervalu [0, 6]!");
+                else
+                    vrstaOblika = value;
             }
         }
         public int X

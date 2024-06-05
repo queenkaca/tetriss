@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace tetriss
 {
@@ -11,6 +12,7 @@ namespace tetriss
     {
         public Figura_S(int x, int y, int trenutnaRotacija):base(x, y, trenutnaRotacija)
         {
+            VrstaOblika = 5;
             tetromino = new int[4, 4, 4]{
                 { { 0,  0, 0, 0 },
                   { 0, -1,-1, 0 },
