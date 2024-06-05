@@ -54,6 +54,8 @@ namespace tetriss
             Random random = new Random();
             Figura_J f = new Figura_J(5, 5, 1);
             f.Crtaj(g, random);
+            Figura_I f1 = new Figura_I(8, 8, 0);
+            f1.Crtaj(g, random);
         }
 
         private void label1_Click(object sender, EventArgs e)

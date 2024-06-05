@@ -28,11 +28,11 @@ namespace tetriss
         #region metode
         public void PomeriDesno()
         {
-            X++;
+            X += 1;
         }
         public void PomeriLevo()
         {
-            X--;
+            X -=1;
         }
         public void PomeriDole()
         {
