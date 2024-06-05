@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace tetriss
 {
@@ -13,6 +14,9 @@ namespace tetriss
 
         public Figura_I(int x, int y, int trenutnaRotacija):base(x, y, trenutnaRotacija)
         {
+            //indeks oblika I
+            VrstaOblika = 0;
+
             // prvi broj je broj matrica, drugi je broj redova u matrici i treci je broj kolona u matrici
             tetromino = new int[4, 4, 4] {
                 { { 0, 0, -1, 0 },
@@ -55,7 +59,7 @@ namespace tetriss
                 for (int j = 0; j < 4; j++)
                 {
                     if (tetromino[trenutnaRotacija, i, j] != 0)
-                        CrtajNaXY(x + i, y+ j, g, sb);
+                        CrtajNaXY(x + i, y +j, g, sb);
                 }
             }
         }
