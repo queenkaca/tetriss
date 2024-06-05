@@ -75,7 +75,7 @@ namespace tetriss
         }
         private bool MozeDaSePomera()
         {
-            // prolazi kroz sve koordinate trenutnog oblika i proverava sudaranje
+            // prolazi kroz sve koordinate trenutnog oblika i proverava sudaranjee
             for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
             {
                 for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
