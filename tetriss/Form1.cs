@@ -21,7 +21,7 @@ namespace tetriss
         private void Form1_Load(object sender, EventArgs e)
         {
             // Initialize the SoundPlayer with the path to the audio filee
-            soundPlayer = new SoundPlayer(@"C:\Users\Radovanovic\Downloads\lofitet.wav");
+            soundPlayer = new SoundPlayer(@"music.wav");
 
             // Play the sound in a loop
             soundPlayer.PlayLooping();
