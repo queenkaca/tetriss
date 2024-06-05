@@ -221,6 +221,36 @@ namespace tetriss
 
             trenutnaFigura.X += 1;
         }
+        public void PomeriDole()
+        {
+            // da li moze da se pomeri dole
+            for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
+            {
+                for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
+                {
+                    if (mreza[i, j] < 0 && (j + 1 == visina || mreza[i, j + 1] > 0))
+                    {
+                        return;
+                    }
+                }
+            }
+
+            // pomera dole
+            for (int j = Math.Min(trenutnaFigura.Y + 3, visina - 1); j >= Math.Max(trenutnaFigura.Y, 0); j--)
+            {
+                for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
+                {
+                    if (mreza[i, j] < 0)
+                    {
+                        mreza[i, j + 1] = mreza[i, j];
+                        mreza[i, j] = 0;
+                    }
+                }
+            }
+
+            trenutnaFigura.Y += 1;
+        }
+
         #endregion
     }
 }
