@@ -10,7 +10,7 @@ namespace tetriss
     internal class Figura_O : Figura
     {
         int[,,] tetromino;
-        public Figura_O(int x, int y, int trenutnaRotacija) : base(x, y, trenutnaRotacija)
+        public Figura_O(int x, int y, int trenutnaRotacija, Color boja) : base(x, y, trenutnaRotacija, boja)
         {
             VrstaOblika = 6;
             tetromino = new int[4, 4, 4]{
@@ -47,8 +47,7 @@ namespace tetriss
         }
         public void Crtaj(Graphics g, Random random)
         {
-            Color boja = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
-            SolidBrush sb = new SolidBrush(boja);
+            SolidBrush sb = new SolidBrush(Boja);
 
             for (int i = 0; i < 4; i++)
             {

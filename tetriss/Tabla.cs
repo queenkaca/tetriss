@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace tetriss
 {
@@ -17,6 +18,7 @@ namespace tetriss
         Figura trenutnaFigura;
         Figura sledecaFigura;
         Rezultat poeni;
+        public List<Figura> figurice;
 
         #endregion
 
@@ -30,6 +32,7 @@ namespace tetriss
                 this.mreza = mreza;
                 this.sirina = sirina;
                 this.visina = visina;
+                figurice = new List<Figura>();
             }
         }
         public Tabla()
@@ -39,6 +42,16 @@ namespace tetriss
         #endregion
 
         #region svojstva
+        public Figura SledecaFigura
+        {
+            get { return sledecaFigura; }
+            set { sledecaFigura = value; }
+        }
+        public Figura TrenutnaFigura
+        {
+            get { return trenutnaFigura; }
+            set { trenutnaFigura = value; }
+        }
         public int Visina
         {
             get { return visina; }
@@ -62,7 +75,26 @@ namespace tetriss
         #endregion
 
         #region metode
-        
+        public void CrtajSledecuFiguru(Graphics g)
+        {
+            Color newLightYellow = ColorTranslator.FromHtml("#FCE6C1");
+            SolidBrush sb = new SolidBrush(SledecaFigura.Boja);
+            Pen pen = new Pen(newLightYellow);
+            int dimenzijeKvadrata = 25;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (SledecaFigura.Tetromino[SledecaFigura.TrenutnaRotacija, i, j] != 0)
+                    {
+                        g.FillRectangle(sb, 75 + i * dimenzijeKvadrata, 75 + j * dimenzijeKvadrata, dimenzijeKvadrata, dimenzijeKvadrata);
+                        g.DrawRectangle(pen, 75 + i * dimenzijeKvadrata, 75 + j * dimenzijeKvadrata, dimenzijeKvadrata, dimenzijeKvadrata);
+
+                    }
+                }
+            }
+        }
+
         public bool ProveriSudar()
         {
             if (MozeDaSePomera())
@@ -153,6 +185,7 @@ namespace tetriss
         {
             trenutnaFigura = sledecaFigura;
             sledecaFigura = GenerisiFiguru(sledecaFigura.VrstaOblika, sledecaFigura.TrenutnaRotacija);
+            figurice.Add(trenutnaFigura);
 
             trenutnaFigura.X = r.Next(7);
             trenutnaFigura.Y = 0;

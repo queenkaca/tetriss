@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::tetriss.Properties.Resources.desktop_wallpaper_trix_on_twitter_pixel_art_pixel_art_design_pixel_art_tutorial_anime_pixel;
-            this.ClientSize = new System.Drawing.Size(982, 649);
+            this.ClientSize = new System.Drawing.Size(982, 953);
             this.Controls.Add(this.najrezultatLabela);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rezultatLabela);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,6 @@ namespace tetriss
     {
         #region atributi
         Tabla tabla;
-        Figura trenutnaFigura;
-        Figura sledecaFigura;
         bool krajIgre;
         Rezultat poeni;
         #endregion
@@ -31,7 +30,8 @@ namespace tetriss
         #region svojstva
 
         #endregion
-
+        
+        
         #region metode
         public void Unos()
         {

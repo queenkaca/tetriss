@@ -14,14 +14,16 @@ namespace tetriss
         protected int trenutnaRotacija;
         protected int vrstaOblika;
         int dimenzijeKvadrata = 30;
+        Color boja = Color.LightBlue;
         #endregion
 
         #region konstruktori
-        public Figura(int x, int y, int trenutnaRotacija)
+        public Figura(int x, int y, int trenutnaRotacija, Color boja)
         {
             X = x;
             Y = y;
             TrenutnaRotacija = trenutnaRotacija;
+            Boja = boja;
         }
         public Figura() { }
         #endregion
@@ -44,6 +46,11 @@ namespace tetriss
         #endregion
 
         #region svojstva
+        public Color Boja
+        {
+            get { return boja; }
+            set { boja = value; }
+        }
         abstract public int[,,] Tetromino
         {
             get;
