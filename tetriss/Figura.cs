@@ -26,19 +26,6 @@ namespace tetriss
         #endregion
 
         #region metode
-        public void PomeriDesno()
-        {
-            X++;
-        }
-        public void PomeriLevo()
-        {
-            X--;
-        }
-        public void PomeriDole()
-        {
-            Y++;
-        }
-
         protected void CrtajNaXY(int i, int j, Graphics g, Brush brush)
         {
             //crtanje kvadrata na poziciji (x,y) na tabli 10x20
