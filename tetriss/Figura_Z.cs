@@ -53,7 +53,7 @@ namespace tetriss
                 for (int j = 0; j < 4; j++)
                 {
                     if (tetromino[trenutnaRotacija, i, j] != 0)
-                        CrtajNaXY(x + i,y+ j, g, sb);
+                        CrtajNaXY(x + i, y+ j, g, sb);
                 }
             }
         }

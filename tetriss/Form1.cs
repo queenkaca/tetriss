@@ -55,7 +55,7 @@ namespace tetriss
             }
             Graphics g = CreateGraphics();
             Random random = new Random();
-            Figura_J f = new Figura_J(5, 5, 1);
+            Figura_I f = new Figura_I(6, 14, 1);
             f.Crtaj(g, random);
         }
 

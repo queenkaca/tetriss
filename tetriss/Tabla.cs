@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace tetriss
 {
@@ -61,6 +62,32 @@ namespace tetriss
         #endregion
 
         #region metode
+        public void PomeriLevo()
+        {
+            for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
+            {
+                for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
+                {
+                    if (mreza[i, j] < 0 && (i == 0 || mreza[i - 1, j] > 0))
+                        return;
+
+                }
+            }
+
+
+            for(int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
+            { 
+			for (int j = Math.Max(trenutnaFigura.X, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
+                {
+                if (mreza[i,j] < 0)
+                    {
+                        mreza[i - 1,j] = mreza[i,j];
+                        mreza[i,j] = 0;
+                    }
+                }
+            }
+            trenutnaFigura.X -= 1;
+        }
         public bool ProveriSudar()
         {
             if (MozeDaSePomera())
