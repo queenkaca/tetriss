@@ -13,7 +13,7 @@ namespace tetriss
         Figura trenutnaFigura;
         Figura sledecaFigura;
         bool krajIgre;
-        //Unos unos;
+        //Unos unoss;
         Rezultat poeni;
         #endregion
 
