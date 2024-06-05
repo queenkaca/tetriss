@@ -12,6 +12,7 @@ namespace tetriss
         #region atributi
         protected int x, y;
         protected int trenutnaRotacija;
+        protected int vrstaOblika;
         int dimenzijeKvadrata = 30;
         #endregion
 
@@ -26,19 +27,6 @@ namespace tetriss
         #endregion
 
         #region metode
-        public void PomeriDesno()
-        {
-            X += 1;
-        }
-        public void PomeriLevo()
-        {
-            X -=1;
-        }
-        public void PomeriDole()
-        {
-            Y++;
-        }
-
         protected void CrtajNaXY(int i, int j, Graphics g, Brush brush)
         {
             //crtanje kvadrata na poziciji (x,y) na tabli 10x20
@@ -69,6 +57,17 @@ namespace tetriss
                     throw new Exception("Indeks rotacije mora biti u intervalu [0, 3]!");
                 else
                     trenutnaRotacija = value;
+            }
+        }
+        public int VrstaOblika
+        {
+            get { return vrstaOblika; }
+            set
+            {
+                if (value < 0 || value > 6)
+                    throw new Exception("Indeks oblika mora biti u intervalu [0, 6]!");
+                else
+                    vrstaOblika = value;
             }
         }
         public int X

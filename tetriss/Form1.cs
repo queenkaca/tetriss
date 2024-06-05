@@ -5,8 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Media;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,9 +17,12 @@ namespace tetriss
         {
             InitializeComponent();
         }
-
+        private SoundPlayer soundPlayer;
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            // Play the sound in a loop
+            soundPlayer.PlayLooping();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -52,7 +53,7 @@ namespace tetriss
             }
             Graphics g = CreateGraphics();
             Random random = new Random();
-            Figura_J f = new Figura_J(5, 5, 1);
+            Figura_I f = new Figura_I(6, 14, 1);
             f.Crtaj(g, random);
             Figura_I f1 = new Figura_I(8, 8, 0);
             f1.Crtaj(g, random);
