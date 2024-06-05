@@ -26,9 +26,12 @@ namespace tetriss
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            SolidBrush sb = new SolidBrush(Color.Black);
-            Pen okvir = new Pen(Color.Gray, 5);
-            Pen olovka = new Pen(Color.Gray, 1);
+            Color newLightPurple = ColorTranslator.FromHtml("#A08EB9");
+            Color newLightYellow = ColorTranslator.FromHtml("#FCE6C1");
+
+            SolidBrush sb = new SolidBrush(newLightPurple);
+            Pen okvir = new Pen(newLightYellow, 5);
+            Pen olovka = new Pen(newLightYellow, 1);
 
             //crtanje sredisnje table
             e.Graphics.FillRectangle(sb, 225, 50, 300, 600);
@@ -49,7 +52,7 @@ namespace tetriss
             }
             Graphics g = CreateGraphics();
             Random random = new Random();
-            Figura_Z f = new Figura_Z(5, 5, 1);
+            Figura_J f = new Figura_J(5, 5, 1);
             f.Crtaj(g, random);
         }
 

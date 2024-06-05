@@ -41,6 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MV Boli", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
             this.label1.Location = new System.Drawing.Point(425, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 49);
@@ -53,6 +54,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.AliceBlue;
             this.label2.Location = new System.Drawing.Point(72, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 29);
@@ -64,6 +66,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.AliceBlue;
             this.label3.Location = new System.Drawing.Point(744, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 29);
@@ -75,6 +78,7 @@
             this.rezultatLabela.AutoSize = true;
             this.rezultatLabela.BackColor = System.Drawing.Color.Transparent;
             this.rezultatLabela.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rezultatLabela.ForeColor = System.Drawing.Color.AliceBlue;
             this.rezultatLabela.Location = new System.Drawing.Point(864, 129);
             this.rezultatLabela.Name = "rezultatLabela";
             this.rezultatLabela.Size = new System.Drawing.Size(29, 29);
@@ -86,6 +90,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.AliceBlue;
             this.label5.Location = new System.Drawing.Point(744, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 29);
@@ -97,6 +102,7 @@
             this.najrezultatLabela.AutoSize = true;
             this.najrezultatLabela.BackColor = System.Drawing.Color.Transparent;
             this.najrezultatLabela.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.najrezultatLabela.ForeColor = System.Drawing.Color.AliceBlue;
             this.najrezultatLabela.Location = new System.Drawing.Point(893, 189);
             this.najrezultatLabela.Name = "najrezultatLabela";
             this.najrezultatLabela.Size = new System.Drawing.Size(29, 29);
@@ -108,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::tetriss.Properties.Resources.desktop_wallpaper_trix_on_twitter_pixel_art_pixel_art_design_pixel_art_tutorial_anime_pixel;
-            this.ClientSize = new System.Drawing.Size(982, 953);
+            this.ClientSize = new System.Drawing.Size(982, 649);
             this.Controls.Add(this.najrezultatLabela);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rezultatLabela);

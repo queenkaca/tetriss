@@ -42,7 +42,9 @@ namespace tetriss
         protected void CrtajNaXY(int i, int j, Graphics g, Brush brush)
         {
             //crtanje kvadrata na poziciji (x,y) na tabli 10x20
-            Pen olovka = new Pen(Color.Black);
+            Color newLightPurple = ColorTranslator.FromHtml("#A08EB9");
+            Color newLightYellow = ColorTranslator.FromHtml("#FCE6C1");
+            Pen olovka = new Pen(newLightYellow);
             int pocetakTableX = 225;
             int pocetakTableY = 50;
 
