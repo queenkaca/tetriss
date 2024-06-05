@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace tetriss
 {
@@ -13,7 +14,6 @@ namespace tetriss
         Figura trenutnaFigura;
         Figura sledecaFigura;
         bool krajIgre;
-        //Unos unoss;
         Rezultat poeni;
         #endregion
 
@@ -22,6 +22,10 @@ namespace tetriss
         {
             this.tabla = tabla;
         }
+        public Igra()
+        {
+
+        }
         #endregion
 
         #region svojstva
@@ -29,7 +33,25 @@ namespace tetriss
         #endregion
 
         #region metode
-
+        public void Unos()
+        {
+            if (Keyboard.IsKeyDown(Key.Left))
+            {
+                tabla.PomeriLevo();
+            }
+            if (Keyboard.IsKeyDown(Key.Right))
+            {
+                tabla.PomeriDesno();
+            }
+            if (Keyboard.IsKeyDown(Key.Down))
+            {
+                tabla.PomeriDole();
+            }
+            if (Keyboard.IsKeyDown(Key.Up))
+            {
+                tabla.Rotiraj();
+            }
+        }
         #endregion
     }
 }

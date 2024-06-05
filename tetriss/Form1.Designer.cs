@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rezultatLabela = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.najrezultatLabela = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -109,6 +111,10 @@
             this.najrezultatLabela.TabIndex = 5;
             this.najrezultatLabela.Text = "0";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -125,6 +131,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,6 +145,7 @@
         private System.Windows.Forms.Label rezultatLabela;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label najrezultatLabela;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

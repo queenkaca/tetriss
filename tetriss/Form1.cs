@@ -8,11 +8,13 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace tetriss
 {
     public partial class Form1 : Form
     {
+        Igra igra;
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +22,7 @@ namespace tetriss
         private SoundPlayer soundPlayer;
         private void Form1_Load(object sender, EventArgs e)
         {
+            igra = new Igra();
             // Initialize the SoundPlayer with the path to the audio filee
             soundPlayer = new SoundPlayer(@"music.wav");
 
@@ -62,6 +65,16 @@ namespace tetriss
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            igra.Unos();
         }
     }
 }
