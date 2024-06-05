@@ -152,7 +152,7 @@ namespace tetriss
         public bool DodajFiguru(Random r)
         {
             trenutnaFigura = sledecaFigura;
-            sledecaFigura = GenerisiRandomFiguru(r);
+            sledecaFigura = GenerisiFiguru(sledecaFigura.VrstaOblika, sledecaFigura.TrenutnaRotacija);
 
             trenutnaFigura.X = r.Next(7);
             trenutnaFigura.Y = 0;
@@ -175,11 +175,8 @@ namespace tetriss
 
             return true;
         }
-        private Figura GenerisiRandomFiguru(Random r)
+        private Figura GenerisiFiguru(int vrstaOblika, int vrstaRotacije)
         {
-            int vrstaOblika = r.Next(7);
-            int vrstaRotacije = r.Next(4);
-
             switch (vrstaOblika)
             {
                 case 0: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
@@ -189,7 +186,6 @@ namespace tetriss
                 case 4: return new Figura_T { TrenutnaRotacija = vrstaRotacije };
                 case 5: return new Figura_S { TrenutnaRotacija = vrstaRotacije };
                 case 6: return new Figura_O { TrenutnaRotacija = vrstaRotacije };
-                case 7: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
                 default: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
             }
         }
@@ -277,7 +273,37 @@ namespace tetriss
 
             trenutnaFigura.Y += 1;
         }
+        public void Rotiraj()
+        {
+            Figura rotiranaFigura = GenerisiFiguru(trenutnaFigura.VrstaOblika, (trenutnaFigura.TrenutnaRotacija + 1) % 4);
 
+            for (int i = trenutnaFigura.X; i < trenutnaFigura.X + 4; i++)
+            {
+                for (int j = trenutnaFigura.Y; j < trenutnaFigura.Y + 4; j++)
+                {
+                    if (rotiranaFigura.Tetromino[trenutnaFigura.TrenutnaRotacija, i - trenutnaFigura.X, j - trenutnaFigura.Y] < 0 
+                        && (i < 0 || i >= sirina || j < 0 || j >= visina || mreza[i, j] > 0))
+                    {
+                        return;
+                    }
+                }
+            }
+
+            trenutnaFigura.TrenutnaRotacija = (trenutnaFigura.TrenutnaRotacija + 1) % 4;
+            trenutnaFigura = rotiranaFigura;
+
+            for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
+            {
+                for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
+                {
+                    if (mreza[i, j] < 0)
+                        mreza[i, j] = 0;
+
+                    if (trenutnaFigura.Tetromino[trenutnaFigura.TrenutnaRotacija, i - trenutnaFigura.X, j - trenutnaFigura.Y] < 0)
+                        mreza[i, j] = -1;
+                }
+            }
+        }
         #endregion
     }
 }
