@@ -191,6 +191,36 @@ namespace tetriss
                 default: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
             }
         }
+
+        public void PomeriDesno()
+        {
+            // proverava da li moze da se pomeri desno
+            for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
+            {
+                for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
+                {
+                    if (mreza[i, j] < 0 && (i + 1 == sirina || mreza[i + 1, j] > 0))
+                    {
+                        return;
+                    }
+                }
+            }
+
+            // pomera desno
+            for (int i = Math.Min(trenutnaFigura.X + 3, sirina - 1); i >= Math.Max(trenutnaFigura.X, 0); i--)
+            {
+                for (int j = Math.Max(trenutnaFigura.Y, 0); j < Math.Min(trenutnaFigura.Y + 4, visina); j++)
+                {
+                    if (mreza[i, j] < 0)
+                    {
+                        mreza[i + 1, j] = mreza[i, j];
+                        mreza[i, j] = 0;
+                    }
+                }
+            }
+
+            trenutnaFigura.X += 1;
+        }
         #endregion
     }
 }
