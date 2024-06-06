@@ -42,8 +42,8 @@ namespace tetriss
             Pen olovka = new Pen(newLightYellow, 1);
 
             //crtanje sredisnje table
-            e.Graphics.FillRectangle(sb, 225, 50, 300, 600);
-            e.Graphics.DrawRectangle(okvir, 225, 50, 300, 600);
+            e.Graphics.FillRectangle(sb, 225, 50, 300, 660);
+            e.Graphics.DrawRectangle(okvir, 225, 50, 300, 660);
 
             //crtanje leve table
             e.Graphics.FillRectangle(sb, 50, 50, 150, 150);
@@ -54,7 +54,7 @@ namespace tetriss
             {
                 e.Graphics.DrawLine(olovka, 225 + i * 30, 50, 225 + i * 30, 650);
             }
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 22; i++)
             {
                 e.Graphics.DrawLine(olovka, 225, 50 + i * 30, 525, 50 + i*30);
             }
@@ -79,6 +79,7 @@ namespace tetriss
         private void timer1_Tick(object sender, EventArgs e)
         {
             igra.Unos();
+            
         }
     }
 }
