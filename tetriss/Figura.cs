@@ -43,6 +43,19 @@ namespace tetriss
             g.DrawRectangle(olovka, pocetakTableX + dimenzijeKvadrata * i,
                 pocetakTableY + dimenzijeKvadrata * j, dimenzijeKvadrata, dimenzijeKvadrata);
         }
+        public void Crtaj(Graphics g, Random random)
+        {
+            SolidBrush sb = new SolidBrush(Boja);
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (Tetromino[trenutnaRotacija, i, j] != 0)
+                        CrtajNaXY(X + i, Y + j, g, sb);
+                }
+            }
+        }
         #endregion
 
         #region svojstva
@@ -82,8 +95,7 @@ namespace tetriss
             get { return x; }
             set
             {
-                if (value > 0) x = value;
-                else throw new Exception("Koordinate ne mogu da budu negativne!");
+                x = value;
             }
         }
         public int Y
@@ -91,8 +103,7 @@ namespace tetriss
             get { return y; }
             set
             {
-                if (value > 0) y = value;
-                else throw new Exception("Koordinate ne mogu da budu negativne!");
+                y = value;
             }
         }
         #endregion

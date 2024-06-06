@@ -44,18 +44,5 @@ namespace tetriss
             get { return tetromino; }
         }
         
-        public void Crtaj(Graphics g, Random random)
-        {
-            SolidBrush sb = new SolidBrush(Boja);
-
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    if (tetromino[trenutnaRotacija,i, j] != 0)
-                        CrtajNaXY(x + i,y+ j, g, sb);
-                }
-            }
-        }
     }
 }

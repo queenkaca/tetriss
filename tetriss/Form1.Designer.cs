@@ -44,9 +44,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MV Boli", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(425, 10);
+            this.label1.Location = new System.Drawing.Point(556, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 49);
+            this.label1.Size = new System.Drawing.Size(100, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tetris";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -57,9 +58,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label2.Location = new System.Drawing.Point(72, 25);
+            this.label2.Location = new System.Drawing.Point(54, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 29);
+            this.label2.Size = new System.Drawing.Size(142, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Naredna figura";
             // 
@@ -69,9 +71,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label3.Location = new System.Drawing.Point(744, 129);
+            this.label3.Location = new System.Drawing.Point(558, 105);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 29);
+            this.label3.Size = new System.Drawing.Size(96, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Rezultat:";
             // 
@@ -81,9 +84,10 @@
             this.rezultatLabela.BackColor = System.Drawing.Color.Transparent;
             this.rezultatLabela.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rezultatLabela.ForeColor = System.Drawing.Color.AliceBlue;
-            this.rezultatLabela.Location = new System.Drawing.Point(864, 129);
+            this.rezultatLabela.Location = new System.Drawing.Point(648, 105);
+            this.rezultatLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rezultatLabela.Name = "rezultatLabela";
-            this.rezultatLabela.Size = new System.Drawing.Size(29, 29);
+            this.rezultatLabela.Size = new System.Drawing.Size(25, 25);
             this.rezultatLabela.TabIndex = 3;
             this.rezultatLabela.Text = "0";
             // 
@@ -93,9 +97,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label5.Location = new System.Drawing.Point(744, 189);
+            this.label5.Location = new System.Drawing.Point(558, 154);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 29);
+            this.label5.Size = new System.Drawing.Size(120, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Najrezultat:";
             // 
@@ -105,9 +110,10 @@
             this.najrezultatLabela.BackColor = System.Drawing.Color.Transparent;
             this.najrezultatLabela.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.najrezultatLabela.ForeColor = System.Drawing.Color.AliceBlue;
-            this.najrezultatLabela.Location = new System.Drawing.Point(893, 189);
+            this.najrezultatLabela.Location = new System.Drawing.Point(670, 154);
+            this.najrezultatLabela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.najrezultatLabela.Name = "najrezultatLabela";
-            this.najrezultatLabela.Size = new System.Drawing.Size(29, 29);
+            this.najrezultatLabela.Size = new System.Drawing.Size(25, 25);
             this.najrezultatLabela.TabIndex = 5;
             this.najrezultatLabela.Text = "0";
             // 
@@ -117,16 +123,20 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::tetriss.Properties.Resources.desktop_wallpaper_trix_on_twitter_pixel_art_pixel_art_design_pixel_art_tutorial_anime_pixel;
-            this.ClientSize = new System.Drawing.Size(982, 953);
+            this.ClientSize = new System.Drawing.Size(736, 774);
             this.Controls.Add(this.najrezultatLabela);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rezultatLabela);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1000, 1000);
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

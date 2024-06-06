@@ -21,10 +21,7 @@ namespace tetriss
         {
             this.tabla = tabla;
         }
-        public Igra()
-        {
-
-        }
+        public Igra() { }
         #endregion
 
         #region svojstva
@@ -52,6 +49,16 @@ namespace tetriss
                 tabla.Rotiraj();
             }
         }
+
+        public void CrtajSveFigure(Graphics g, Random r)
+        {
+            foreach (var f in tabla.figurice)
+            {
+                f.Crtaj(g, r);
+            }
+        }
         #endregion
+
+
     }
 }
