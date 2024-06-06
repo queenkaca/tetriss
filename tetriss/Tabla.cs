@@ -14,8 +14,8 @@ namespace tetriss
     {
         #region atributi
         int[,] mreza;
-        int sirina;
-        int visina;
+        int sirina = 10;
+        int visina =22;
         Figura trenutnaFigura;
         Figura sledecaFigura;
         Rezultat poeni;
@@ -24,22 +24,16 @@ namespace tetriss
         #endregion
 
         #region konstruktori
-        public Tabla(int[,] mreza, int sirina, int visina)
-        {
-            if (visina <= 0 || sirina <= 0)
-                throw new Exception("Dimenzije table moraju biti vece od 0.");
-            else
-            {
-                this.mreza = mreza;
-                this.sirina = sirina;
-                this.visina = visina;
-                figurice = new List<Figura>();
-            }
-            
-        }
         public Tabla()
         {
+            mreza = new int[sirina, visina];
+            figurice = new List<Figura>();
+            poeni = new Rezultat();
+            trenutnaFigura = GenerisiFiguru();
+            sledecaFigura = GenerisiFiguru();
 
+            figurice.Add(trenutnaFigura);
+            
         }
         #endregion
 
@@ -251,27 +245,27 @@ namespace tetriss
             switch (i)
             {
                 case 0:
-                    figura = new Figura_I(3, 0, j, boja);
+                    figura = new Figura_I(3, -3, j, boja);
                     break;
                 case 1:
-                    figura = new Figura_J(3, 0, j, boja);
+                    figura = new Figura_J(3, -3, j, boja);
                     break;
                 case 2:
-                    figura = new Figura_J(3, 0, j, boja);
+                    figura = new Figura_J(3, -3, j, boja);
                     break;
                 case 3: 
-                    figura = new Figura_Z(3, 0, j, boja);
+                    figura = new Figura_Z(3, -3, j, boja);
                     break;
                 case 4:
-                    figura= new Figura_T(3, 0, j, boja);
+                    figura= new Figura_T(3, -3, j, boja);
                     break;
                 case 5:
-                    figura= new Figura_S(3, 0, j, boja);
+                    figura= new Figura_S(3, -3, j, boja);
                     break;
                 case 6: 
-                    figura = new Figura_O(3, 0, j, boja);
+                    figura = new Figura_O(3, -3, j, boja);
                     break;
-                default: return new Figura_I(3, 0, j, boja);
+                default: return new Figura_I(3, -3, j, boja);
             }
             figura.Y -= BrPraznihRedovaIznad(figura);
             return figura;

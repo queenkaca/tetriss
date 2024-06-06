@@ -43,7 +43,7 @@ namespace tetriss
             g.DrawRectangle(olovka, pocetakTableX + dimenzijeKvadrata * i,
                 pocetakTableY + dimenzijeKvadrata * j, dimenzijeKvadrata, dimenzijeKvadrata);
         }
-        public void Crtaj(Graphics g, Random random)
+        public void Crtaj(Graphics g)
         {
             SolidBrush sb = new SolidBrush(Boja);
 

@@ -13,12 +13,9 @@ namespace tetriss
         #endregion
 
         #region konstruktori
-        public Rezultat(int poeni)
+        public Rezultat()
         {
-            if (poeni < 0)
-                throw new Exception("Poeni ne mogu biti negativni.");
-            else
-                this.poeni = poeni;
+            poeni = 0;
         }
         #endregion
 

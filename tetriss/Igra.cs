@@ -11,17 +11,15 @@ namespace tetriss
     internal class Igra
     {
         #region atributi
-        Tabla tabla;
+        public Tabla tabla;
         bool krajIgre;
-        Rezultat poeni;
         #endregion
 
         #region konstruktori
-        public Igra(Tabla tabla)
+        public Igra()
         {
-            this.tabla = tabla;
+            tabla = new Tabla();
         }
-        public Igra() { }
         #endregion
 
         #region svojstva
@@ -50,11 +48,11 @@ namespace tetriss
             }
         }
 
-        public void CrtajSveFigure(Graphics g, Random r)
+        public void CrtajSveFigure(Graphics g)
         {
             foreach (var f in tabla.figurice)
             {
-                f.Crtaj(g, r);
+                f.Crtaj(g);
             }
         }
         #endregion

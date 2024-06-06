@@ -61,18 +61,13 @@ namespace tetriss
             {
                 e.Graphics.DrawLine(olovka, 225, 50 + i * 30, 525, 50 + i*30);
             }
+
+            Graphics g = CreateGraphics();
             Tabla t = new Tabla();
             Figura f = t.GenerisiFiguru();
-            Random random = new Random();
-            f.Crtaj(e.Graphics, random);
-            //Random random = new Random();
-            //igra.CrtajSveFigure(e.Graphics, random);
-            /*Graphics g = CreateGraphics();
-            Random random = new Random();
-            Figura_I f = new Figura_I(6, 14, 1);
-            f.Crtaj(g, random);
-            Figura_I f1 = new Figura_I(8, 8, 0);
-            f1.Crtaj(g, random);*/
+            f.Crtaj(g);
+
+            igra.CrtajSveFigure(g);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -87,7 +82,9 @@ namespace tetriss
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             igra.Unos();
+            igra.tabla.PomeriDole();
         }
     }
 }
