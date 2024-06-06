@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,6 +35,7 @@ namespace tetriss
                 this.visina = visina;
                 figurice = new List<Figura>();
             }
+            
         }
         public Tabla()
         {
@@ -77,7 +79,17 @@ namespace tetriss
         #region metode
         public void CrtajSledecuFiguru(Graphics g)
         {
+            Color newLightPurple = ColorTranslator.FromHtml("#A08EB9");
             Color newLightYellow = ColorTranslator.FromHtml("#FCE6C1");
+
+            SolidBrush solidB = new SolidBrush(newLightPurple);
+            Pen okvir = new Pen(newLightYellow, 5);
+            Pen olovka = new Pen(newLightYellow, 1);
+
+            //crtanje leve table
+            g.FillRectangle(solidB, 50, 50, 150, 150);
+            g.DrawRectangle(okvir, 50, 50, 150, 150);
+
             SolidBrush sb = new SolidBrush(SledecaFigura.Boja);
             Pen pen = new Pen(newLightYellow);
             int dimenzijeKvadrata = 25;
@@ -184,7 +196,7 @@ namespace tetriss
         public bool DodajFiguru(Random r)
         {
             trenutnaFigura = sledecaFigura;
-            sledecaFigura = GenerisiFiguru(sledecaFigura.VrstaOblika, sledecaFigura.TrenutnaRotacija);
+            sledecaFigura = GenerisiFiguru();
             figurice.Add(trenutnaFigura);
 
             trenutnaFigura.X = r.Next(7);
@@ -208,20 +220,63 @@ namespace tetriss
 
             return true;
         }
-        private Figura GenerisiFiguru(int vrstaOblika, int vrstaRotacije)
+        public int BrPraznihRedovaIznad(Figura f)
         {
-            switch (vrstaOblika)
+            int br = 0;
+            bool ok = true;
+            int i = 0;
+            while(ok)
             {
-                case 0: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
-                case 1: return new Figura_L { TrenutnaRotacija = vrstaRotacije };
-                case 2: return new Figura_J { TrenutnaRotacija = vrstaRotacije };
-                case 3: return new Figura_Z { TrenutnaRotacija = vrstaRotacije };
-                case 4: return new Figura_T { TrenutnaRotacija = vrstaRotacije };
-                case 5: return new Figura_S { TrenutnaRotacija = vrstaRotacije };
-                case 6: return new Figura_O { TrenutnaRotacija = vrstaRotacije };
-                default: return new Figura_I { TrenutnaRotacija = vrstaRotacije };
+                for (int j = 0; j < 4; j++)
+                {
+                    if (f.Tetromino[f.TrenutnaRotacija, i, j] != 0)
+                    {
+                        ok = false;
+                        break;
+                    }
+                }
+                i++;
+                if(ok)
+                    br++;
             }
+            return br ;
         }
+        public Figura GenerisiFiguru()
+        {
+            Random r = new Random();
+            int i = r.Next(0, 7);
+            int j = r.Next(0, 4);
+            Color boja = Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
+            Figura figura;
+            switch (i)
+            {
+                case 0:
+                    figura = new Figura_I(3, 0, j, boja);
+                    break;
+                case 1:
+                    figura = new Figura_J(3, 0, j, boja);
+                    break;
+                case 2:
+                    figura = new Figura_J(3, 0, j, boja);
+                    break;
+                case 3: 
+                    figura = new Figura_Z(3, 0, j, boja);
+                    break;
+                case 4:
+                    figura= new Figura_T(3, 0, j, boja);
+                    break;
+                case 5:
+                    figura= new Figura_S(3, 0, j, boja);
+                    break;
+                case 6: 
+                    figura = new Figura_O(3, 0, j, boja);
+                    break;
+                default: return new Figura_I(3, 0, j, boja);
+            }
+            figura.Y -= BrPraznihRedovaIznad(figura);
+            return figura;
+        }
+        
         public void PomeriLevo()
         {
             for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
@@ -308,7 +363,7 @@ namespace tetriss
         }
         public void Rotiraj()
         {
-            Figura rotiranaFigura = GenerisiFiguru(trenutnaFigura.VrstaOblika, (trenutnaFigura.TrenutnaRotacija + 1) % 4);
+            Figura rotiranaFigura = new Figura_I();
 
             for (int i = trenutnaFigura.X; i < trenutnaFigura.X + 4; i++)
             {

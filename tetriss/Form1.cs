@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Reflection;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,11 +18,13 @@ namespace tetriss
     public partial class Form1 : Form
     {
         Igra igra;
+        
         public Form1()
         {
             InitializeComponent();
         }
         private SoundPlayer soundPlayer;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             igra = new Igra();
@@ -52,12 +55,18 @@ namespace tetriss
             //crtanje mreze
             for (int i = 0; i < 10; i++)
             {
-                e.Graphics.DrawLine(olovka, 225 + i * 30, 50, 225 + i * 30, 650);
+                e.Graphics.DrawLine(olovka, 225 + i * 30, 50, 225 + i * 30, 710);
             }
             for (int i = 0; i < 22; i++)
             {
                 e.Graphics.DrawLine(olovka, 225, 50 + i * 30, 525, 50 + i*30);
             }
+            Tabla t = new Tabla();
+            Figura f = t.GenerisiFiguru();
+            Random random = new Random();
+            f.Crtaj(e.Graphics, random);
+            //Random random = new Random();
+            //igra.CrtajSveFigure(e.Graphics, random);
             /*Graphics g = CreateGraphics();
             Random random = new Random();
             Figura_I f = new Figura_I(6, 14, 1);
