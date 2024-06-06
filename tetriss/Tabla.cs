@@ -270,7 +270,24 @@ namespace tetriss
             figura.Y -= BrPraznihRedovaIznad(figura);
             return figura;
         }
-        
+
+        public bool DaLiJeIgraGotova()
+        {
+            Figura novaFigura = GenerisiFiguru();
+
+            // Prolazak kroz sve koordinate nove figure
+            for (int i = Math.Max(novaFigura.X, 0); i < Math.Min(novaFigura.X + 4, sirina); i++)
+            {
+                for (int j = Math.Max(novaFigura.Y, 0); j < Math.Min(novaFigura.Y + 4, visina); j++)
+                {
+                    // Ako postoji sudar sa već postavljenim blokom u mreži, igra je gotova
+                    if (novaFigura.Tetromino[novaFigura.TrenutnaRotacija, i - novaFigura.X, j - novaFigura.Y] < 0 && mreza[i, j] > 0)
+                        return true;
+                }
+            }
+            return false;
+        }
+
         public void PomeriLevo()
         {
             for (int i = Math.Max(trenutnaFigura.X, 0); i < Math.Min(trenutnaFigura.X + 4, sirina); i++)
