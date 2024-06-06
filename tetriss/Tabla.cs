@@ -207,7 +207,7 @@ namespace tetriss
                         return false;
 
                     if (trenutnaFigura.Tetromino[trenutnaFigura.TrenutnaRotacija, i - trenutnaFigura.X, j - trenutnaFigura.Y] < 0)
-                        //***************** treba umesto -1 da ide neka boja---- -currentShapeColor
+                        //***************** treba umesto -1 da ide neka boja----- -currentShapeColor
                         mreza[i, j] = -1;
                 }
             }

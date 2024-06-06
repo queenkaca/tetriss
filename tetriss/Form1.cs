@@ -84,7 +84,7 @@ namespace tetriss
         {
             
             igra.Unos();
-            igra.tabla.PomeriDole();
+            
         }
     }
 }
